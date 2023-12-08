@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <script src="head.js"></script>
+</head>
+<body>
+    <div id="background-container">
+        <img id="background" src="Background.jpg" alt="">
+    </div>
+    <header>
+        <script src="header.js"></script>
+    </header>
+    <main>
+        <form action="index.html" class="button-back">
+            <button id="back-inner">Вернуться</button>
+        </form>
+        <div style="text-align:center; margin-bottom:20px">
+            <h1 class="h0" id="Idol">アイドル</h1>
+            <video controls autoplay onloadstart="this.volume=0.5">
+                <source src="idol.mp4" type="video/mp4" />s
+            </video>
+        </div>
+    </main>
+    <footer>
+        <script src="footer.js"></script>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    #Idol {
+        margin: 40px 0;
+        font-size: 3em;
+    }
+    @media screen and (max-width: 15em) {
+        #Idol {
+            font-size: 20vw;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        #Idol {
+            margin: 10vw 0;
+        }
+    }
+</style>
+<script>
+    const LangOption = document.getElementsByClassName("language-option")
+    LangOption[0].addEventListener('click', LangEnglish)
+    LangOption[1].addEventListener('click', LangRussian)
+    const BackLang = document.getElementById("back-inner")
+    if (window.sessionStorage.getItem("language") === null) window.sessionStorage.setItem("language", "RUS")
+    if (window.sessionStorage.getItem("language") === "RUS") LangRussian()
+    if (window.sessionStorage.getItem("language") === "ENG") LangEnglish()
+    function LangEnglish() {
+        BackLang.innerText = "Return"
+    }
+    function LangRussian() {
+        BackLang.innerText = "Вернуться"
+    }
+</script>
