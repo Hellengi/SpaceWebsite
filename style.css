@@ -740,6 +740,18 @@ video {
     background-color: rgba(0, 0, 0, 1);
     box-shadow: 0 0 16px 8px rgba(0, 50, 100, 0.4) inset, 0 0 24px 8px rgba(0, 50, 100, 0.8);
 }
+#development {
+    width: 25vw;
+    margin: 10vw auto;
+    padding: 3vw;
+    font-size: 3vw;
+    text-align: center;
+    font-style: italic;
+    background-color: black;
+    border: white solid 2px;
+    border-radius: 2vw;
+    rotate: 10deg;
+}
 
 @media screen and (max-width: 400px) {
     #rocket-silo {

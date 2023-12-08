@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <script src="head.js"></script>
+</head>
+<body>
+<div id="background-container">
+    <img id="background" src="Background.jpg" alt="">
+</div>
+<header>
+    <script src="header.js"></script>
+</header>
+<main>
+    <div id="name"><div class="line"></div><div id="name-text">Классификация</div><div class="line"></div></div>
+    <div id="development">В разработке</div>
+</main>
+<footer>
+    <script src="footer.js"></script>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<style>
+    #name {
+        display: flex;
+        text-align: center;
+        font-family: Play-Bold,serif;
+        font-size: 3em;
+        margin: 40px 0;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        z-index: 2;
+    }
+    .line {
+        margin: 0 2vw;
+        width: 4em;
+        height: 0.3em;
+        border-radius: 12px / 20px;
+    }
+    .line:first-child {
+        background: linear-gradient(to left, white, rgba(0, 0, 0, 0));
+    }
+    .line:last-child {
+        background: linear-gradient(to right, white, rgba(0, 0, 0, 0));
+    }
+    @media screen and (max-width: 24em) {
+        #name {
+            font-size: 12.5vw;
+        }
+    }
+    @media screen and (max-width: 2000px) {
+        #name {
+            margin: 2vw 0;
+        }
+    }
+</style>
+<script>
+    const LangOption = document.getElementsByClassName("language-option")
+    LangOption[0].addEventListener('click', LangEnglish)
+    LangOption[1].addEventListener('click', LangRussian)
+    const NameText = document.getElementById("name-text")
+    if (window.sessionStorage.getItem("language") === null) window.sessionStorage.setItem("language", "RUS")
+    if (window.sessionStorage.getItem("language") === "RUS") LangRussian()
+    if (window.sessionStorage.getItem("language") === "ENG") LangEnglish()
+    function LangEnglish() {
+        NameText.innerText = "Classification"
+    }
+    function LangRussian() {
+        NameText.innerText = "Классификация"
+    }
+</script>

@@ -22,7 +22,7 @@ document.write(`
     </div>
     <div id="menu-container">
         <div id="menu">
-            <a href="" id="menu-inner-1">Классификация</a>
+            <a href="classification.html" id="menu-inner-1">Классификация</a>
             <a href="history.html" id="menu-inner-2">История изучения</a>
             <a href="catalog.html" id="menu-inner-3">Каталог</a>
             <a href="gallery.html" id="menu-inner-4">Галерея</a>
