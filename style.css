@@ -455,6 +455,7 @@ video {
     z-index: 4;
     display: none;
     transition: backdrop-filter 0.5s;
+    left: 0;
 }
 
 #top-bar {
