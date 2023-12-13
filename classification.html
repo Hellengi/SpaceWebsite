@@ -3,6 +3,7 @@
 <html lang="ru">
 <head>
     <script src="head.js"></script>
+    <link rel="stylesheet" href="classification.css">
 </head>
 <body>
 <div id="background-container">
@@ -12,8 +13,101 @@
     <script src="header.js"></script>
 </header>
 <main>
-    <div id="name"><div class="line"></div><div id="name-text">Классификация</div><div class="line"></div></div>
-    <div id="development">В разработке</div>
+    <div id="name"><div class="line"></div><div id="name-text"></div><div class="line"></div></div>
+    <div id="big-image">
+        <div id="image-container">
+            <div id="block-1" class="block">
+                <div class="name"></div>
+                <div class="line-horizontal"></div>
+                <div class="description-container">
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Comet-1.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                    <div class="line-vertical"></div>
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Comet-2.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                    <div class="line-vertical"></div>
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Comet-3.png" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="block-2" class="block">
+                <div class="name"></div>
+                <div class="line-horizontal"></div>
+                <div class="description-container">
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Asteroid-1.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                    <div class="line-vertical"></div>
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Asteroid-2.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                    <div class="line-vertical"></div>
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Asteroid-3.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="block-3" class="block">
+                <div class="name"></div>
+                <div class="line-horizontal"></div>
+                <div class="description-container">
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Meteoroid-1.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                    <div class="line-vertical"></div>
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Meteoroid-2.webp" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                    <div class="line-vertical"></div>
+                    <div class="description">
+                        <div class="description-name"></div>
+                        <div class="description-description"></div>
+                        <img src="Classification/Meteoroid-3.jpg" class="description-image">
+                        <div class="description-image-name"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="small-image">
+        <div id="small-block-border"></div>
+        <div class="small-block">
+            <img src="Classification/Comet.jpg">
+        </div>
+        <div class="small-block">
+            <img src="Classification/Asteroid.jpg">
+        </div>
+        <div class="small-block">
+            <img src="Classification/Meteoroid.jpg">
+        </div>
+    </div>
 </main>
 <footer>
     <script src="footer.js"></script>
@@ -62,13 +156,78 @@
     LangOption[0].addEventListener('click', LangEnglish)
     LangOption[1].addEventListener('click', LangRussian)
     const NameText = document.getElementById("name-text")
+    const Names = document.getElementsByClassName("name")
+    const DescriptionNames = document.getElementsByClassName("description-name")
+    const DescriptionDescription = document.getElementsByClassName("description-description")
+    const DescriptionImageNames = document.getElementsByClassName("description-image-name")
     if (window.sessionStorage.getItem("language") === null) window.sessionStorage.setItem("language", "RUS")
     if (window.sessionStorage.getItem("language") === "RUS") LangRussian()
     if (window.sessionStorage.getItem("language") === "ENG") LangEnglish()
     function LangEnglish() {
         NameText.innerText = "Classification"
+        Names[0].innerText = "Comets"
+        DescriptionNames[0].innerText = "Short-period"
+        DescriptionNames[1].innerText = "Long-period"
+        DescriptionNames[2].innerText = "Interstellar"
+        DescriptionDescription[0].innerText = "Orbital period less than 200 years"
+        DescriptionDescription[1].innerText = "Orbital period over 200 years"
+        DescriptionDescription[2].innerText = "Not bound by gravity to any star"
+        DescriptionImageNames[0].innerText = "Comet 1P/Halley"
+        DescriptionImageNames[1].innerText = "Comet C/1996 B2/Hyakutake"
+        DescriptionImageNames[2].innerText = "Comet 2I/Borisov"
+        Names[1].innerText = "Asteroid"
+        DescriptionNames[3].innerText = "C-type"
+        DescriptionNames[4].innerText = "S-type"
+        DescriptionNames[5].innerText = "M-type"
+        DescriptionDescription[3].innerText = "Dark carbonaceous (75% of known asteroids)"
+        DescriptionDescription[4].innerText = "Stony silicaceous (17% of known asteroids)"
+        DescriptionDescription[5].innerText = "Metal (7% of known asteroids)"
+        DescriptionImageNames[3].innerText = "253 Mathilde"
+        DescriptionImageNames[4].innerText = "433 Eros"
+        DescriptionImageNames[5].innerText = "21 Lutetia"
+        Names[2].innerText = "Meteoroids"
+        DescriptionNames[6].innerText = "Stony"
+        DescriptionNames[7].innerText = "Stony-iron"
+        DescriptionNames[8].innerText = "Iron"
+        DescriptionDescription[6].innerText = "Chondrites and achondrites"
+        DescriptionDescription[7].innerText = "Pallasites and Mesosiderites"
+        DescriptionDescription[8].innerText = "Octahedrites and Ataxites"
+        DescriptionImageNames[6].innerText = "Chondrite"
+        DescriptionImageNames[7].innerText = "Pallasites"
+        DescriptionImageNames[8].innerText = "Octahedrite"
     }
     function LangRussian() {
         NameText.innerText = "Классификация"
+        Names[0].innerText = "Кометы"
+        DescriptionNames[0].innerText = "Короткопериодические"
+        DescriptionNames[1].innerText = "Долгопериодические"
+        DescriptionNames[2].innerText = "Межзвездные"
+        DescriptionDescription[0].innerText = "Период обращения менее 200 лет"
+        DescriptionDescription[1].innerText = "Период обращения более 200 лет"
+        DescriptionDescription[2].innerText = "Не связаны силами тяготения с какой-либо звездой"
+        DescriptionImageNames[0].innerText = "Комета 1P/Галлея"
+        DescriptionImageNames[1].innerText = "Комета C/1996 B2/Хякутакэ"
+        DescriptionImageNames[2].innerText = "Комета 2I/Борисова"
+        Names[1].innerText = "Астероиды"
+        DescriptionNames[3].innerText = "Класс C"
+        DescriptionNames[4].innerText = "Класс S"
+        DescriptionNames[5].innerText = "Класс M"
+        DescriptionDescription[3].innerText = "Углеродные (75% известных астероидов)"
+        DescriptionDescription[4].innerText = "Силикатные (17% известных астероидов)"
+        DescriptionDescription[5].innerText = "Металлические (7% известных астероидов)"
+        DescriptionImageNames[3].innerText = "253 Матильда"
+        DescriptionImageNames[4].innerText = "433 Эрос"
+        DescriptionImageNames[5].innerText = "21 Лютеция"
+        Names[2].innerText = "Метеороиды"
+        DescriptionNames[6].innerText = "Каменные"
+        DescriptionNames[7].innerText = "Железо-каменные"
+        DescriptionNames[8].innerText = "Железные"
+        DescriptionDescription[6].innerText = "Хондриты и ахондриты"
+        DescriptionDescription[7].innerText = "Палласиты и мезосидериты"
+        DescriptionDescription[8].innerText = "Октаэдриты, гексаэдриты и атакситы"
+        DescriptionImageNames[6].innerText = "Хондрит"
+        DescriptionImageNames[7].innerText = "Палласит"
+        DescriptionImageNames[8].innerText = "Октаэдрит"
     }
 </script>
+<script src="classification.js"></script>

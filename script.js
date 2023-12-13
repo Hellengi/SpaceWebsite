@@ -105,7 +105,7 @@ function WindowClicked() {
     if (LanguageOpened === true) LanguageClose()
 }
 function SetBackground () {
-    Background.style.transform = "translateY(-" + (window.scrollY / (DocumentHeight - WindowHeight) * (BackgroundHeight - WindowHeight)) + "px)"
+    Background.style.transform = "translateY(-" + Math.min(window.scrollY / 2, (window.scrollY / (DocumentHeight - WindowHeight) * (BackgroundHeight - WindowHeight))) + "px)"
 }
 window.addEventListener('resize', WindowResizing)
 window.addEventListener('scroll', WindowScrolling)
