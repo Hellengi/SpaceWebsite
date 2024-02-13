@@ -5,7 +5,7 @@ document.write(`
             <a id="contacts-container-inner">Контакты</a>
             <div id="contacts">
                 <img src="Vk.png" onclick="window.open('https://vk.com/hellengi')"><!--onclick="window.open('https://vk.com/hellengi')"-->
-                <img src="Telegram.png" onclick="window.open('https://t.me/hellengi'")><!--onclick="window.open('https://t.me/hellengi'")-->
+                <img src="Telegram.png" onclick="window.open('https://t.me/hellengi')"><!--onclick="window.open('https://t.me/hellengi'")-->
             </div>
         </div>
         <form action="mobile.html" style="margin:0">
