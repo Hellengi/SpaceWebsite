@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+#astro {
+    position: fixed;
+    width: 100vw;
+    height: calc(100vw / 25 * 15);
+}
+@media screen and (max-aspect-ratio: 25 / 15){
+    #astro {
+        height: 100vh;
+        width: calc(100vh / 15 * 25);
+    }
+}
+.kittens {
+    position: fixed;
+    width: 20vw;
+}

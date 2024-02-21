@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeSite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="astro.jpg" id="astro" alt="" width="2500" height="1500">
+    <img src="kittens_0.jpg" class="kittens" alt="">
+    <img src="kittens_1.webp" class="kittens" alt="">
+    <img src="kittens_2.webp" class="kittens" alt="">
+    <img src="kittens_3.jpg" class="kittens" alt="">
+    <img src="kittens_4.webp" class="kittens" alt="">
+    <img src="kittens_5.webp" class="kittens" alt="">
+    <img src="kittens_6.jpg" class="kittens" alt="">
+    <img src="kittens_7.jpg" class="kittens" alt="">
+    <img src="kittens_8.webp" class="kittens" alt="">
+    <img src="kittens_9.png" class="kittens" alt="">
+    <img src="kittens_10.jpg" class="kittens" alt="">
+    <img src="kittens_11.webp" class="kittens" alt="">
+    <audio src="grand.mp3" autoplay></audio>
+</body>
+</html>
+<script>
+    const Kittens = document.getElementsByClassName("kittens")
+    let CurPositionsX = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    let CurPositionsY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for (let x = 0; x <= 11; x++) {
+        Kittens[x].style.translate = Math.floor(Math.random() * 90) + "vw " + Math.floor(Math.random() * 90) + "vh"
+        CurPositionsX[x] = parseFloat(Kittens[x].style.translate.replace(/v.*/,""))
+        CurPositionsY[x] = parseFloat(Kittens[x].style.translate.replace(/.* /,""))
+    }
+    let PositionsX = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    let PositionsY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    let Timer = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for (let x = 0; x <= 11; x++) {
+        Update(x)
+    }
+    setInterval(function () {
+        for (let x = 0; x <= 11; x++) {
+            CurPositionsX[x] += PositionsX[x]
+            CurPositionsY[x] += PositionsY[x]
+            Kittens[x].style.translate = CurPositionsX[x] + "vw " + CurPositionsY[x] + "vh"
+            Timer[x] -= 1
+            if (Timer[x] === 0) {
+                Update(x)
+            }
+        }
+    }, 1)
+    function Update(N) {
+        PositionsX[N] = Math.floor(Math.random() * 100 - 10)
+        PositionsY[N] = Math.floor(Math.random() * 100 - 10)
+        Timer[N] = Math.floor(Math.random() * 90 + 50)
+        PositionsX[N] = (PositionsX[N] - parseFloat(Kittens[N].style.translate.replace(/v.*/,""))) / Timer[N]
+        PositionsY[N] = (PositionsY[N] - parseFloat(Kittens[N].style.translate.replace(/.* /,""))) / Timer[N]
+        Kittens[N].style.zIndex = Math.floor(Math.random() * 10) + ""
+    }
+</script>
