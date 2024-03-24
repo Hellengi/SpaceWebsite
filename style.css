@@ -13,12 +13,6 @@
     src: url('Whisper-Regular.ttf') format('truetype');
 }
 
-.h0 {
-    font-family: Play-Bold, serif;
-    text-align: center;
-    margin: 0 10px 10px 10px;
-}
-
 #background-container {
     display: flex;
     justify-content: center;
@@ -36,6 +30,12 @@
         width: initial;
         height: 200vh;
     }
+}
+
+.h0 {
+    font-family: Play-Bold, serif;
+    text-align: center;
+    margin: 0 10px 10px 10px;
 }
 
 html {
