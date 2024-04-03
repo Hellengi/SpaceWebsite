@@ -997,3 +997,15 @@ video {
         background-color: rgba(0, 30, 60, 0.6);
     }
 }
+#name {
+    display: flex;
+    text-align: center;
+    font-family: Play-Bold,serif;
+    font-size: 3em;
+    margin: 40px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    z-index: 2;
+}

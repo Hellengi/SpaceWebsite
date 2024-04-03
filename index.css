@@ -1,0 +1,65 @@
+#picture {
+    display: flex;
+    flex-wrap: wrap;
+    width: inherit;
+    justify-content: center;
+    align-items: center;
+}
+
+#earth {
+    z-index: 1;
+    border-radius: 400px;
+    user-select: none;
+}
+
+#moon-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: orbit 6s infinite ease-in-out;
+    animation-delay: -4.5s;
+    z-index: 1;
+    user-select: none;
+}
+
+#moon {
+    position: relative;
+    border-radius: 400px;
+    animation: dist 6s infinite linear;
+    animation-delay: -4.5s;
+    transition: filter 2s ease-in-out, transform 2s;
+}
+
+#moon-map {
+    cursor: crosshair;
+}
+
+@keyframes orbit {
+    0% {
+        transform: translate(300px, -150px);
+        z-index: 1;
+    }
+    50% {
+        transform: translate(-300px, 150px);
+    }
+    100% {
+        transform: translate(300px, -150px);
+        z-index: 0;
+    }
+}
+
+@keyframes dist {
+    25% {
+        transform: translateY(100px) scale(1.25);
+    }
+    75% {
+        transform: translateY(-100px) scale(0.6);
+    }
+}
+
+@media (orientation: portrait) {
+    #picture {
+        padding-left: 40vw;
+    }
+}

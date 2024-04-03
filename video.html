@@ -3,6 +3,7 @@
 <html lang="ru">
 <head>
     <script src="head.js"></script>
+    <link rel="stylesheet" href="video.css">
 </head>
 <body>
     <div id="background-container">
@@ -28,34 +29,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-<style>
-    #Idol {
-        margin: 40px 0;
-        font-size: 3em;
-    }
-    @media screen and (max-width: 15em) {
-        #Idol {
-            font-size: 20vw;
-        }
-    }
-    @media screen and (max-width: 400px) {
-        #Idol {
-            margin: 10vw 0;
-        }
-    }
-</style>
-<script>
-    const LangOption = document.getElementsByClassName("language-option")
-    LangOption[0].addEventListener('click', LangEnglish)
-    LangOption[1].addEventListener('click', LangRussian)
-    const BackLang = document.getElementById("back-inner")
-    if (window.sessionStorage.getItem("language") === null) window.sessionStorage.setItem("language", "RUS")
-    if (window.sessionStorage.getItem("language") === "RUS") LangRussian()
-    if (window.sessionStorage.getItem("language") === "ENG") LangEnglish()
-    function LangEnglish() {
-        BackLang.innerText = "Return"
-    }
-    function LangRussian() {
-        BackLang.innerText = "Вернуться"
-    }
-</script>
+<script src="video.js"></script>

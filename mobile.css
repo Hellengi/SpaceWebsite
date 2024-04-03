@@ -1,0 +1,31 @@
+div {
+    display: grid;
+    background-color: #011;
+}
+
+button {
+    font-family: Play-Bold,serif;
+    font-size: 1em;
+    position: fixed;
+    width: calc((100vw - (99vh / 1.77)) / 2 - 10px);
+    max-width: 200px;
+    margin-top: 25px;
+    margin-left: min(max(calc(((100vw - (99vh / 1.77)) / 2 - 200px) / 2), 5px), 25px);
+    overflow: hidden;
+}
+
+@media screen and (max-width: 40em) {
+    button {
+        font-size: 2.5vw;
+    }
+}
+
+form {
+    margin: 0 auto;
+}
+
+iframe {
+    height: 99vh;
+    width: calc(99vh / 1.77);
+    justify-self: center;
+}

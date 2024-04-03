@@ -1,0 +1,119 @@
+body {
+    overflow: hidden;
+}
+#loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 11;
+    color: white;
+    user-select: none;
+}
+#label {
+    margin: 30vh 0 0 0;
+    text-align: center;
+    min-width: 100vw;
+    font-size: 4vw;
+}
+#counter {
+    margin: 20px 0;
+    text-align: center;
+    min-width: 100vw;
+    font-size: 3vw;
+}
+#progress {
+    margin-left: 30vw;
+    height: 1.5vw;
+    width: 40vw;
+    background-color: white;
+    border-radius: 10px;
+}
+#name {
+    display: flex;
+    text-align: center;
+    font-family: Play-Bold,serif;
+    font-size: 3em;
+    margin: 40px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    z-index: 2;
+}
+.line {
+    margin: 0 2vw;
+    width: 4em;
+    height: 0.3em;
+    border-radius: 12px / 20px;
+}
+.line:first-child {
+    background: linear-gradient(to left, white, rgba(0, 0, 0, 0));
+}
+.line:last-child {
+    background: linear-gradient(to right, white, rgba(0, 0, 0, 0));
+}
+@media screen and (max-width: 24em) {
+    #name {
+        font-size: 12.5vw;
+    }
+}
+@media screen and (max-width: 2000px) {
+    #name {
+        margin: 2vw 0;
+    }
+}
+#gallery {
+    margin: 10px 1vw;
+    display: grid;
+    grid-template-columns: repeat(4, 24vw);
+    grid-auto-rows: 24vw;
+    grid-auto-flow: dense;
+    gap: calc(2vw / 3);
+}
+.image-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.image-square {
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.image-high {
+    grid-column: span 1;
+    grid-row: span 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+@media (orientation: portrait) {
+    #gallery {
+        margin: 1.5vw;
+        grid-template-columns: repeat(2, 48vw);
+        grid-auto-rows: 48vw;
+        gap: 1vw;
+    }
+    #label {
+        width: 50vw;
+        font-size: 12vw;
+    }
+    #counter {
+        width: 50vw;
+        font-size: 9vw;
+    }
+    #progress {
+        margin-left: 10vw;
+        height: 3vw;
+        width: 80vw;
+    }
+}
